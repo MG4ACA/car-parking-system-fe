@@ -331,12 +331,12 @@ A comprehensive car parking management system with vehicle recognition, automate
 
 **Frontend**
 
-- [ ] 2.9 Create login page
-- [ ] 2.10 Create auth store (Pinia)
-- [ ] 2.11 Implement route guards
-- [ ] 2.12 Create user management UI (admin)
-- [ ] 2.13 Create user form components
-- [ ] 2.14 Implement token refresh logic
+- [x] 2.9 Create login page
+- [x] 2.10 Create auth store (Pinia)
+- [x] 2.11 Implement route guards
+- [x] 2.12 Create user management UI (admin)
+- [x] 2.13 Create user form components
+- [x] 2.14 Implement token refresh logic
 
 ### Phase 3: Core System Setup (Week 2)
 
