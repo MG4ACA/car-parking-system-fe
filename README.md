@@ -16,7 +16,7 @@ A comprehensive car parking management system with vehicle recognition, automate
 ### Backend
 
 - **Express.js** (Node.js Framework)
-- **PostgreSQL** (Database)
+- **MySQL** (Database)
 - **Sequelize** (ORM)
 - **JWT** (Authentication)
 - **Google Vision API** (OCR/License Plate Recognition)
@@ -73,23 +73,22 @@ A comprehensive car parking management system with vehicle recognition, automate
 
 ```
 car-parking-system-2/
-├── backend/                 # Backend API
-│   ├── src/
-│   │   ├── config/         # Configuration files
-│   │   ├── controllers/    # Request handlers
-│   │   ├── middleware/     # Custom middleware
-│   │   ├── models/         # Database models
-│   │   ├── routes/         # API routes
-│   │   ├── services/       # Business logic
-│   │   ├── utils/          # Utility functions
-│   │   └── validators/     # Validation schemas
-│   ├── uploads/            # Image storage
-│   ├── logs/              # Application logs
-│   ├── .env               # Environment variables
-│   ├── server.js          # Entry point
-│   └── package.json
-│
-├── backend/frontend/       # Frontend Application
+├── frontend/               # Frontend Application (Main Project)
+│   ├── backend/           # Backend API (Nested)
+│   │   ├── src/
+│   │   │   ├── config/         # Configuration files
+│   │   │   ├── controllers/    # Request handlers
+│   │   │   ├── middleware/     # Custom middleware
+│   │   │   ├── models/         # Database models
+│   │   │   ├── routes/         # API routes
+│   │   │   ├── services/       # Business logic
+│   │   │   ├── utils/          # Utility functions
+│   │   │   └── validators/     # Validation schemas
+│   │   ├── uploads/            # Image storage
+│   │   ├── logs/              # Application logs
+│   │   ├── .env               # Environment variables
+│   │   ├── server.js          # Entry point
+│   │   └── package.json
 │   ├── src/
 │   │   ├── assets/        # Static assets
 │   │   ├── components/    # Vue components
@@ -102,10 +101,11 @@ car-parking-system-2/
 │   │   ├── App.vue
 │   │   └── main.js
 │   ├── .env               # Environment variables
-│   └── package.json
+│   ├── package.json
+│   ├── PROJECT_PLAN.md    # Complete project plan
+│   └── CODE_STRUCTURE.md  # Code structure & standards
 │
-├── PROJECT_PLAN.md         # Complete project plan
-└── CODE_STRUCTURE.md       # Code structure & standards
+└── README.md              # This file
 ```
 
 ## 🛠️ Installation & Setup
@@ -113,7 +113,7 @@ car-parking-system-2/
 ### Prerequisites
 
 - Node.js (v18 or higher)
-- PostgreSQL (v14 or higher)
+- MySQL (v8.0 or higher)
 - Google Cloud Account (for Vision API)
 
 ### 1. Clone the Repository
@@ -128,7 +128,7 @@ cd car-parking-system-2
 #### Install Dependencies
 
 ```bash
-cd backend
+cd frontend/backend
 npm install
 ```
 
@@ -142,14 +142,14 @@ Edit `.env` file:
 
 ```env
 NODE_ENV=development
-PORT=3000
+PORT=5000
 
 # Database
 DB_HOST=localhost
-DB_PORT=5432
+DB_PORT=3306
 DB_NAME=parking_system
-DB_USER=postgres
-DB_PASSWORD=your_password
+DB_USER=root
+DB_PASSWORD=1234
 
 # JWT
 JWT_SECRET=your_jwt_secret_key_here
@@ -169,7 +169,7 @@ IMAGE_RETENTION_DAYS=30
 
 ```bash
 # Create database
-createdb parking_system
+mysql -u root -p -e "CREATE DATABASE parking_system;"
 
 # Run migrations
 npm run migrate
@@ -188,14 +188,14 @@ npm run dev
 npm start
 ```
 
-Backend will run on: `http://localhost:3000`
+Backend will run on: `http://localhost:5000`
 
 ### 3. Frontend Setup
 
 #### Install Dependencies
 
 ```bash
-cd backend/frontend
+cd frontend
 npm install
 ```
 
@@ -208,7 +208,7 @@ cp .env.example .env
 Edit `.env` file:
 
 ```env
-VITE_API_BASE_URL=http://localhost:3000/api
+VITE_API_BASE_URL=http://localhost:5000/api
 VITE_APP_NAME=Car Parking System
 ```
 
@@ -255,7 +255,7 @@ Frontend will run on: `http://localhost:5173`
 ### Base URL
 
 ```
-http://localhost:3000/api
+http://localhost:5000/api
 ```
 
 ### Authentication Endpoints
@@ -284,14 +284,14 @@ http://localhost:3000/api
 ### Backend Tests
 
 ```bash
-cd backend
+cd frontend/backend
 npm test
 ```
 
 ### Frontend Tests
 
 ```bash
-cd backend/frontend
+cd frontend
 npm test
 ```
 
@@ -301,7 +301,7 @@ Deployment instructions will be added in Phase 13.
 
 ## 📝 Available Scripts
 
-### Backend
+### Backend (from frontend/backend/)
 
 - `npm start` - Start production server
 - `npm run dev` - Start development server
@@ -310,7 +310,7 @@ Deployment instructions will be added in Phase 13.
 - `npm test` - Run tests
 - `npm run lint` - Lint code
 
-### Frontend
+### Frontend (from frontend/)
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
@@ -329,8 +329,8 @@ Deployment instructions will be added in Phase 13.
 
 ## 📖 Documentation
 
-- [Project Plan](PROJECT_PLAN.md) - Complete development roadmap
-- [Code Structure](CODE_STRUCTURE.md) - Architecture & coding standards
+- [Project Plan](./PROJECT_PLAN.md) - Complete development roadmap (in frontend/)
+- [Code Structure](./CODE_STRUCTURE.md) - Architecture & coding standards (in frontend/)
 
 ## 🤝 Contributing
 

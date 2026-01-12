@@ -8,7 +8,7 @@
 backend/
 ├── src/
 │   ├── config/              # Configuration files
-│   │   ├── database.js      # PostgreSQL connection
+│   │   ├── database.js      # MySQL connection
 │   │   ├── jwt.js           # JWT configuration
 │   │   └── logger.js        # Winston logger setup
 │   ├── middleware/          # Custom middleware
@@ -633,7 +633,7 @@ import { useAuthStore } from '@/stores/auth.store'
 import router from '@/router'
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api',
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json'
@@ -1353,14 +1353,14 @@ chore: Update dependencies
 
 ```
 NODE_ENV=development
-PORT=3000
+PORT=5000
 
 # Database
 DB_HOST=localhost
-DB_PORT=5432
+DB_PORT=3306
 DB_NAME=parking_system
-DB_USER=postgres
-DB_PASSWORD=your_password
+DB_USER=root
+DB_PASSWORD=1234
 
 # JWT
 JWT_SECRET=your_jwt_secret_key_here
@@ -1383,7 +1383,7 @@ LOG_LEVEL=info
 ### Frontend (.env)
 
 ```
-VITE_API_BASE_URL=http://localhost:3000/api
+VITE_API_BASE_URL=http://localhost:5000/api
 VITE_APP_NAME=Car Parking System
 ```
 
