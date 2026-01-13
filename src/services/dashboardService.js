@@ -44,6 +44,25 @@ const dashboardService = {
       params: { period },
     });
   },
+
+  /**
+   * Get recent activities (entries/exits)
+   * @param {number} limit - Number of activities to fetch
+   * @returns {Promise} Recent activities
+   */
+  getRecentActivities: (limit = 20) => {
+    return api.get('/dashboard/recent-activities', {
+      params: { limit },
+    });
+  },
+
+  /**
+   * Get active vehicles currently parked
+   * @returns {Promise} Active vehicles list
+   */
+  getActiveVehicles: () => {
+    return api.get('/dashboard/active-vehicles');
+  },
 };
 
 export default dashboardService;
