@@ -3,6 +3,7 @@ import ActiveVehiclesTable from '@/components/dashboard/ActiveVehiclesTable.vue'
 import RecentActivitiesFeed from '@/components/dashboard/RecentActivitiesFeed.vue';
 import StatisticsCard from '@/components/dashboard/StatisticsCard.vue';
 import ZoneOccupancyCard from '@/components/dashboard/ZoneOccupancyCard.vue';
+import MainLayout from '@/components/layout/MainLayout.vue';
 import { useAuthStore } from '@/stores/auth.store';
 import { useDashboardStore } from '@/stores/dashboard.store';
 import { formatCurrency } from '@/utils/formatters';
@@ -63,110 +64,113 @@ const handleViewVehicleDetails = (vehicle) => {
 </script>
 
 <template>
-  <div class="dashboard">
-    <!-- Header -->
-    <div class="dashboard-header">
-      <div>
-        <h1>Dashboard</h1>
-        <p class="text-secondary">Welcome back, {{ userName }}!</p>
+  <MainLayout>
+    <div class="dashboard">
+      <!-- Header -->
+      <div class="dashboard-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p class="text-secondary">Welcome back, {{ userName }}!</p>
+        </div>
+        <div class="header-actions">
+          <span class="last-updated">Last updated: {{ lastUpdateTime }}</span>
+          <Button
+            icon="pi pi-refresh"
+            :loading="loading"
+            @click="handleRefresh"
+            label="Refresh"
+            size="small"
+            outlined
+          />
+          <Button
+            :icon="autoRefreshEnabled ? 'pi pi-pause' : 'pi pi-play'"
+            :label="autoRefreshEnabled ? 'Auto-refresh ON' : 'Auto-refresh OFF'"
+            @click="handleToggleAutoRefresh"
+            size="small"
+            :severity="autoRefreshEnabled ? 'success' : 'secondary'"
+            outlined
+          />
+        </div>
       </div>
-      <div class="header-actions">
-        <span class="last-updated">Last updated: {{ lastUpdateTime }}</span>
-        <Button
-          icon="pi pi-refresh"
-          :loading="loading"
-          @click="handleRefresh"
-          label="Refresh"
-          size="small"
-          outlined
+
+      <!-- Statistics Cards Grid -->
+      <div class="stats-grid">
+        <StatisticsCard
+          icon="pi pi-map"
+          :value="stats.totalSpaces"
+          label="Total Parking Spaces"
+          gradient="purple"
+          :loading="loadingStats"
         />
-        <Button
-          :icon="autoRefreshEnabled ? 'pi pi-pause' : 'pi pi-play'"
-          :label="autoRefreshEnabled ? 'Auto-refresh ON' : 'Auto-refresh OFF'"
-          @click="handleToggleAutoRefresh"
-          size="small"
-          :severity="autoRefreshEnabled ? 'success' : 'secondary'"
-          outlined
+        <StatisticsCard
+          icon="pi pi-car"
+          :value="stats.occupiedSpaces"
+          label="Occupied Spaces"
+          :extra="`${occupancyPercentage}% Occupancy`"
+          gradient="pink"
+          :loading="loadingStats"
         />
-      </div>
-    </div>
-
-    <!-- Statistics Cards Grid -->
-    <div class="stats-grid">
-      <StatisticsCard
-        icon="pi pi-map"
-        :value="stats.totalSpaces"
-        label="Total Parking Spaces"
-        gradient="purple"
-        :loading="loadingStats"
-      />
-      <StatisticsCard
-        icon="pi pi-car"
-        :value="stats.occupiedSpaces"
-        label="Occupied Spaces"
-        :extra="`${occupancyPercentage}% Occupancy`"
-        gradient="pink"
-        :loading="loadingStats"
-      />
-      <StatisticsCard
-        icon="pi pi-check-circle"
-        :value="stats.availableSpaces"
-        label="Available Spaces"
-        gradient="blue"
-        :loading="loadingStats"
-      />
-      <StatisticsCard
-        icon="pi pi-dollar"
-        :value="formattedRevenue"
-        label="Today's Revenue"
-        gradient="green"
-        :loading="loadingStats"
-      />
-      <StatisticsCard
-        icon="pi pi-clock"
-        :value="stats.activeSessions"
-        label="Active Sessions"
-        gradient="orange"
-        :loading="loadingStats"
-      />
-      <StatisticsCard
-        icon="pi pi-list"
-        :value="stats.totalVehicles"
-        label="Total Vehicles Today"
-        gradient="teal"
-        :loading="loadingStats"
-      />
-    </div>
-
-    <!-- Zone Occupancy -->
-    <div class="zone-section">
-      <ZoneOccupancyCard :zones="zoneOccupancy" :loading="loadingZones" />
-    </div>
-
-    <!-- Two Column Layout -->
-    <div class="content-grid">
-      <!-- Active Vehicles Table -->
-      <div class="vehicles-section">
-        <ActiveVehiclesTable
-          :vehicles="activeVehicles"
-          :loading="loadingVehicles"
-          @view-details="handleViewVehicleDetails"
+        <StatisticsCard
+          icon="pi pi-check-circle"
+          :value="stats.availableSpaces"
+          label="Available Spaces"
+          gradient="blue"
+          :loading="loadingStats"
+        />
+        <StatisticsCard
+          icon="pi pi-dollar"
+          :value="formattedRevenue"
+          label="Today's Revenue"
+          gradient="green"
+          :loading="loadingStats"
+        />
+        <StatisticsCard
+          icon="pi pi-clock"
+          :value="stats.activeSessions"
+          label="Active Sessions"
+          gradient="orange"
+          :loading="loadingStats"
+        />
+        <StatisticsCard
+          icon="pi pi-list"
+          :value="stats.totalVehicles"
+          label="Total Vehicles Today"
+          gradient="teal"
+          :loading="loadingStats"
         />
       </div>
 
-      <!-- Recent Activities Feed -->
-      <div class="activities-section">
-        <RecentActivitiesFeed :activities="recentActivities" :loading="loadingActivities" />
+      <!-- Zone Occupancy -->
+      <div class="zone-section">
+        <ZoneOccupancyCard :zones="zoneOccupancy" :loading="loadingZones" />
+      </div>
+
+      <!-- Two Column Layout -->
+      <div class="content-grid">
+        <!-- Active Vehicles Table -->
+        <div class="vehicles-section">
+          <ActiveVehiclesTable
+            :vehicles="activeVehicles"
+            :loading="loadingVehicles"
+            @view-details="handleViewVehicleDetails"
+          />
+        </div>
+
+        <!-- Recent Activities Feed -->
+        <div class="activities-section">
+          <RecentActivitiesFeed :activities="recentActivities" :loading="loadingActivities" />
+        </div>
       </div>
     </div>
-  </div>
+  </MainLayout>
 </template>
 
 <style scoped>
 .dashboard {
   padding: var(--spacing-lg);
-  max-width: 1600px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
+  width: 100%;
 }
 
 .dashboard-header {

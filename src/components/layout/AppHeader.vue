@@ -10,6 +10,8 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const authStore = useAuthStore();
 
+const emit = defineEmits(['toggle-sidebar']);
+
 const userMenu = ref();
 const userMenuItems = ref([
   {
@@ -124,6 +126,14 @@ const handleLogout = () => {
   <header class="app-header">
     <Menubar :model="menuItems" class="app-menubar">
       <template #start>
+        <Button
+          icon="pi pi-bars"
+          severity="secondary"
+          text
+          rounded
+          @click="emit('toggle-sidebar')"
+          class="md:hidden"
+        />
         <div class="app-logo">
           <i class="pi pi-car text-3xl mr-2"></i>
           <span class="font-bold text-xl">Car Parking</span>

@@ -99,7 +99,8 @@ export const useDashboardStore = defineStore('dashboard', () => {
     loadingSessions.value = true;
     try {
       const response = await dashboardService.getRecentSessions(limit);
-      recentSessions.value = response.data || [];
+      const data = response.data;
+      recentSessions.value = Array.isArray(data) ? data : data?.sessions || [];
     } catch (error) {
       console.error('Failed to fetch recent sessions:', error);
       showError('Failed to load recent sessions');
@@ -131,7 +132,9 @@ export const useDashboardStore = defineStore('dashboard', () => {
     loadingVehicles.value = true;
     try {
       const response = await dashboardService.getActiveVehicles();
-      activeVehicles.value = response.data || [];
+      // Handle both array and object responses
+      const data = response.data;
+      activeVehicles.value = Array.isArray(data) ? data : data?.vehicles || [];
     } catch (error) {
       console.error('Failed to fetch active vehicles:', error);
       showError('Failed to load active vehicles');
@@ -147,7 +150,8 @@ export const useDashboardStore = defineStore('dashboard', () => {
     loadingZones.value = true;
     try {
       const response = await dashboardService.getZoneOccupancy();
-      zoneOccupancy.value = response.data || [];
+      const data = response.data;
+      zoneOccupancy.value = Array.isArray(data) ? data : data?.zones || [];
     } catch (error) {
       console.error('Failed to fetch zone occupancy:', error);
       showError('Failed to load zone occupancy');

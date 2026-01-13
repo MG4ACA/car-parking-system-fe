@@ -3,6 +3,7 @@ import { useZoneStore } from '@/stores/zone.store';
 import { storeToRefs } from 'pinia';
 import { useConfirm } from 'primevue/useconfirm';
 import { onMounted, ref } from 'vue';
+import Tooltip from 'primevue/tooltip';
 
 import Button from 'primevue/button';
 import Column from 'primevue/column';
@@ -11,6 +12,8 @@ import DataTable from 'primevue/datatable';
 import Drawer from 'primevue/drawer';
 import ProgressBar from 'primevue/progressbar';
 import Tag from 'primevue/tag';
+
+const vTooltip = Tooltip;
 
 import ZoneForm from '@/components/admin/ZoneForm.vue';
 
@@ -94,7 +97,7 @@ const getStatusSeverity = (isActive) => {
 };
 
 const getCapacityPercentage = (zone) => {
-  return zoneStore.getCapacityPercentage(zone);
+  return zoneStore.getZoneCapacityPercentage(zone);
 };
 
 const getCapacitySeverity = (percentage) => {

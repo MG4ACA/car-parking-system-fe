@@ -2,6 +2,7 @@
 import { useNotification } from '@/composables/useNotification';
 import { useUserStore } from '@/stores/user.store';
 import { storeToRefs } from 'pinia';
+import Tooltip from 'primevue/tooltip';
 import { useConfirm } from 'primevue/useconfirm';
 import { computed, onMounted, ref, watch } from 'vue';
 
@@ -17,6 +18,9 @@ import Password from 'primevue/password';
 import Tag from 'primevue/tag';
 
 import UserForm from '@/components/admin/UserForm.vue';
+
+// Register tooltip directive
+const vTooltip = Tooltip;
 
 const userStore = useUserStore();
 const { users, loading, pagination, filters } = storeToRefs(userStore);

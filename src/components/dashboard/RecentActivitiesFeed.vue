@@ -181,7 +181,11 @@ const formatRelativeTime = (date) => {
   height: 40px;
   border-radius: 50%;
   display: flex;
-  align-ittitle {
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-title {
   font-weight: 600;
   color: var(--text-primary);
   font-size: 0.9375rem;
@@ -213,9 +217,8 @@ const formatRelativeTime = (date) => {
   align-items: center;
   gap: var(--spacing-sm);
   font-size: 0.8125rem;
-  color: var(--text-secondary)
-  padding: 3rem 1rem;
   color: var(--text-secondary);
+  padding: 3rem 1rem;
 }
 
 .empty-state i,
@@ -262,5 +265,3 @@ const formatRelativeTime = (date) => {
   }
 }
 </style>
-activity-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; } .activity-meta {
-flex-direction: column; align-items: flex-start

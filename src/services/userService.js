@@ -11,8 +11,18 @@ const userService = {
    * @param {string} params.search - Search by username or email
    */
   getUsers: (params = {}) => {
-    const queryString = new URLSearchParams(params).toString();
-    return api.get(`/users?${queryString}`);
+    // Filter out null values and convert camelCase to snake_case
+    const cleanParams = {};
+    if (params.page !== undefined) cleanParams.page = params.page;
+    if (params.limit !== undefined) cleanParams.limit = params.limit;
+    if (params.role !== null && params.role !== undefined) cleanParams.role = params.role;
+    if (params.isActive !== null && params.isActive !== undefined)
+      cleanParams.is_active = params.isActive;
+    if (params.search !== null && params.search !== undefined && params.search !== '')
+      cleanParams.search = params.search;
+
+    const queryString = new URLSearchParams(cleanParams).toString();
+    return api.get(`/users${queryString ? '?' + queryString : ''}`);
   },
 
   /**
