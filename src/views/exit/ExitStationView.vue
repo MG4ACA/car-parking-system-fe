@@ -204,7 +204,7 @@ onMounted(async () => {
         <template #content>
           <Stepper v-model:activeStep="activeStep" linear>
             <!-- Step 1: Search Vehicle -->
-            <StepperPanel header="Search Vehicle">
+            <StepPanel header="Search Vehicle">
               <template #content="{ nextCallback }">
                 <div class="step-content">
                   <VehicleSearch :searching="searching" @search="handleSearch" />
@@ -248,10 +248,10 @@ onMounted(async () => {
                   </div>
                 </div>
               </template>
-            </StepperPanel>
+            </StepPanel>
 
             <!-- Step 2: Bill & Charges -->
-            <StepperPanel header="Bill & Charges">
+            <StepPanel header="Bill & Charges">
               <template #content="{ prevCallback, nextCallback }">
                 <div class="step-content">
                   <BillDisplay
@@ -277,10 +277,10 @@ onMounted(async () => {
                   </div>
                 </div>
               </template>
-            </StepperPanel>
+            </StepPanel>
 
             <!-- Step 3: Exit Image -->
-            <StepperPanel header="Exit Image">
+            <StepPanel header="Exit Image">
               <template #content="{ prevCallback, nextCallback }">
                 <div class="step-content">
                   <ImageCapture
@@ -308,10 +308,10 @@ onMounted(async () => {
                   </div>
                 </div>
               </template>
-            </StepperPanel>
+            </StepPanel>
 
-            <!-- Step 4: Payment & Confirm -->
-            <StepperPanel header="Payment & Exit">
+            <!-- Step 4: Payment & Exit -->
+            <StepPanel header="Payment & Exit">
               <template #content="{ prevCallback }">
                 <div class="step-content">
                   <div class="payment-section">
@@ -374,7 +374,7 @@ onMounted(async () => {
                   </div>
                 </div>
               </template>
-            </StepperPanel>
+            </StepPanel>
           </Stepper>
         </template>
       </Card>

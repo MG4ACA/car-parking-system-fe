@@ -39,13 +39,14 @@ import ProgressBar from 'primevue/progressbar';
 import ProgressSpinner from 'primevue/progressspinner';
 import SelectButton from 'primevue/selectbutton';
 import Skeleton from 'primevue/skeleton';
+import StepPanel from 'primevue/steppanel';
 import Stepper from 'primevue/stepper';
-import StepperPanel from 'primevue/stepperpanel';
 import TabPanel from 'primevue/tabpanel';
 import TabView from 'primevue/tabview';
 import Tag from 'primevue/tag';
 import Textarea from 'primevue/textarea';
 import Timeline from 'primevue/timeline';
+import Toast from 'primevue/toast';
 import Tooltip from 'primevue/tooltip';
 
 // PrimeIcons
@@ -106,14 +107,16 @@ app.component('ProgressSpinner', ProgressSpinner);
 app.component('SelectButton', SelectButton);
 app.component('Skeleton', Skeleton);
 app.component('Stepper', Stepper);
-app.component('StepperPanel', StepperPanel);
+app.component('StepPanel', StepPanel);
 app.component('TabPanel', TabPanel);
 app.component('TabView', TabView);
 app.component('Tag', Tag);
 app.component('Textarea', Textarea);
 app.component('Timeline', Timeline);
+app.component('Toast', Toast);
 
 // Register Global Directives
 app.directive('tooltip', Tooltip);
+app.directive('toast', Toast);
 
 app.mount('#app');

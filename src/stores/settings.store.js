@@ -93,6 +93,15 @@ export const useSettingsStore = defineStore('settings', () => {
     }
   };
 
+  /**
+   * Get a setting by key from the cached settings object
+   * @param {string} key - The setting key
+   * @returns {*} The setting value
+   */
+  const getSetting = (key) => {
+    return settings.value[key];
+  };
+
   // Reset store
   const $reset = () => {
     settings.value = {};
@@ -110,6 +119,7 @@ export const useSettingsStore = defineStore('settings', () => {
     fetchSettingByKey,
     updateSetting,
     updateSettings,
+    getSetting,
     $reset,
   };
 });

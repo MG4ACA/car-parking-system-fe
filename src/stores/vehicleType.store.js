@@ -25,7 +25,10 @@ export const useVehicleTypeStore = defineStore('vehicleType', () => {
 
     try {
       const response = await vehicleTypeService.getVehicleTypes(params);
-      vehicleTypes.value = response.data;
+      // Handle both array and paginated response
+      vehicleTypes.value = Array.isArray(response.data)
+        ? response.data
+        : response.data?.vehicleTypes || [];
       return response;
     } catch (err) {
       error.value = err.response?.data?.error?.message || 'Failed to fetch vehicle types';

@@ -1,5 +1,6 @@
 <script setup>
 import { useAuthStore } from '@/stores/auth.store';
+import Toast from 'primevue/toast';
 import { onMounted } from 'vue';
 
 const authStore = useAuthStore();

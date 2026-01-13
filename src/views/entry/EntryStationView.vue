@@ -223,7 +223,7 @@ watch(isDuplicate, (newVal) => {
         <template #content>
           <Stepper v-model:activeStep="activeStep" linear>
             <!-- Step 1: Image Capture -->
-            <StepperPanel header="Vehicle Image & Plate">
+            <StepPanel header="Vehicle Image & Plate">
               <template #content="{ nextCallback }">
                 <div class="step-content">
                   <ImageCapture
@@ -283,10 +283,10 @@ watch(isDuplicate, (newVal) => {
                   </div>
                 </div>
               </template>
-            </StepperPanel>
+            </StepPanel>
 
             <!-- Step 2: Vehicle Type -->
-            <StepperPanel header="Vehicle Type">
+            <StepPanel header="Vehicle Type">
               <template #content="{ prevCallback, nextCallback }">
                 <div class="step-content">
                   <VehicleTypeSelector v-model="vehicleTypeId" />
@@ -309,10 +309,10 @@ watch(isDuplicate, (newVal) => {
                   </div>
                 </div>
               </template>
-            </StepperPanel>
+            </StepPanel>
 
             <!-- Step 3: Parking Zone -->
-            <StepperPanel header="Parking Zone">
+            <StepPanel header="Parking Zone">
               <template #content="{ prevCallback, nextCallback }">
                 <div class="step-content">
                   <ZoneSelector
@@ -339,10 +339,10 @@ watch(isDuplicate, (newVal) => {
                   </div>
                 </div>
               </template>
-            </StepperPanel>
+            </StepPanel>
 
             <!-- Step 4: Confirmation & Notes -->
-            <StepperPanel header="Confirm & Submit">
+            <StepPanel header="Confirm & Submit">
               <template #content="{ prevCallback }">
                 <div class="step-content">
                   <!-- Summary -->
@@ -401,7 +401,7 @@ watch(isDuplicate, (newVal) => {
                   </div>
                 </div>
               </template>
-            </StepperPanel>
+            </StepPanel>
           </Stepper>
         </template>
       </Card>
