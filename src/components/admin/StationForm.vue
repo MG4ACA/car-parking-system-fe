@@ -1,9 +1,5 @@
 <script setup>
 import zoneService from '@/services/zoneService';
-import Button from 'primevue/button';
-import Dropdown from 'primevue/dropdown';
-import InputSwitch from 'primevue/inputswitch';
-import InputText from 'primevue/inputtext';
 import { onMounted, ref, watch } from 'vue';
 
 const props = defineProps({

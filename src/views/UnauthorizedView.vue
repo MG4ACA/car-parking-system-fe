@@ -1,9 +1,7 @@
 <script setup>
-import Card from 'primevue/card'
-import Button from 'primevue/button'
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
 
-const router = useRouter()
+const router = useRouter();
 </script>
 
 <template>
@@ -11,7 +9,7 @@ const router = useRouter()
     <Card class="unauthorized-card">
       <template #content>
         <div class="unauthorized-content">
-          <i class="pi pi-lock" style="font-size: 4rem; color: var(--warning-color);"></i>
+          <i class="pi pi-lock" style="font-size: 4rem; color: var(--warning-color)"></i>
           <h1>403</h1>
           <h2>Unauthorized Access</h2>
           <p>You don't have permission to access this page.</p>

@@ -1,13 +1,6 @@
 <script setup>
 import { useVehicleTypeStore } from '@/stores/vehicleType.store';
 import { storeToRefs } from 'pinia';
-import Button from 'primevue/button';
-import Calendar from 'primevue/calendar';
-import Dialog from 'primevue/dialog';
-import Dropdown from 'primevue/dropdown';
-import InputText from 'primevue/inputtext';
-import Message from 'primevue/message';
-import Textarea from 'primevue/textarea';
 import { computed, onMounted, ref } from 'vue';
 
 const props = defineProps({

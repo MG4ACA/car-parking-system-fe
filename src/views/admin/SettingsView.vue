@@ -3,12 +3,6 @@ import { useSettingsStore } from '@/stores/settings.store';
 import { storeToRefs } from 'pinia';
 import { computed, onMounted, ref } from 'vue';
 
-import Button from 'primevue/button';
-import Card from 'primevue/card';
-import Dropdown from 'primevue/dropdown';
-import InputNumber from 'primevue/inputnumber';
-import InputSwitch from 'primevue/inputswitch';
-
 const settingsStore = useSettingsStore();
 const { settings, loading } = storeToRefs(settingsStore);
 

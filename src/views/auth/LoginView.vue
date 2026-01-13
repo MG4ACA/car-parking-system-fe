@@ -4,12 +4,6 @@ import { useAuthStore } from '@/stores/auth.store';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import Button from 'primevue/button';
-import Card from 'primevue/card';
-import Checkbox from 'primevue/checkbox';
-import InputText from 'primevue/inputtext';
-import Password from 'primevue/password';
-
 const router = useRouter();
 const authStore = useAuthStore();
 const { success, error } = useNotification();

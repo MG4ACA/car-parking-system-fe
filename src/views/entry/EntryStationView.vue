@@ -10,12 +10,6 @@ import { useStationStore } from '@/stores/station.store';
 import { useVehicleTypeStore } from '@/stores/vehicleType.store';
 import { useZoneStore } from '@/stores/zone.store';
 import { storeToRefs } from 'pinia';
-import Button from 'primevue/button';
-import Card from 'primevue/card';
-import Message from 'primevue/message';
-import Stepper from 'primevue/stepper';
-import StepperPanel from 'primevue/stepperpanel';
-import Textarea from 'primevue/textarea';
 import { computed, onMounted, ref, watch } from 'vue';
 
 // Stores

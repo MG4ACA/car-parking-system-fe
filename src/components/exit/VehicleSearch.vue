@@ -1,8 +1,4 @@
 <script setup>
-import Button from 'primevue/button';
-import Card from 'primevue/card';
-import InputText from 'primevue/inputtext';
-import ProgressSpinner from 'primevue/progressspinner';
 import { computed, ref } from 'vue';
 
 const props = defineProps({

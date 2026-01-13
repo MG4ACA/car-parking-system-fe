@@ -1,6 +1,5 @@
 <script setup>
 import { useAuthStore } from '@/stores/auth.store';
-import PanelMenu from 'primevue/panelmenu';
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 

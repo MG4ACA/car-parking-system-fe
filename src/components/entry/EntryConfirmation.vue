@@ -1,11 +1,6 @@
 <script setup>
 import ImagePreview from '@/components/common/ImagePreview.vue';
 import { formatDate, formatTime } from '@/utils/formatters';
-import Button from 'primevue/button';
-import Card from 'primevue/card';
-import Dialog from 'primevue/dialog';
-import Divider from 'primevue/divider';
-import Tag from 'primevue/tag';
 import { computed } from 'vue';
 
 const props = defineProps({

@@ -1,9 +1,6 @@
 <script setup>
 import ImageCapture from '@/components/common/ImageCapture.vue';
 import ImageGallery from '@/components/common/ImageGallery.vue';
-import Card from 'primevue/card';
-import Divider from 'primevue/divider';
-import Tag from 'primevue/tag';
 import { ref } from 'vue';
 
 // Demo state

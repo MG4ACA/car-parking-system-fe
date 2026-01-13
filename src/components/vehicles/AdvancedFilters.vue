@@ -3,12 +3,6 @@ import { useVehicleStore } from '@/stores/vehicle.store';
 import { useVehicleTypeStore } from '@/stores/vehicleType.store';
 import { useZoneStore } from '@/stores/zone.store';
 import { storeToRefs } from 'pinia';
-import Button from 'primevue/button';
-import Calendar from 'primevue/calendar';
-import Card from 'primevue/card';
-import Divider from 'primevue/divider';
-import Dropdown from 'primevue/dropdown';
-import InputText from 'primevue/inputtext';
 import { computed, onMounted, ref } from 'vue';
 
 const vehicleStore = useVehicleStore();

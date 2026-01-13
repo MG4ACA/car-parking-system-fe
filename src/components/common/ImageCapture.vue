@@ -2,11 +2,6 @@
 import { useImageCapture } from '@/composables/useImageCapture';
 import { ref, watch } from 'vue';
 
-import Button from 'primevue/button';
-import Card from 'primevue/card';
-import Divider from 'primevue/divider';
-import ProgressBar from 'primevue/progressbar';
-
 import ImagePreview from './ImagePreview.vue';
 import ManualPlateEntry from './ManualPlateEntry.vue';
 

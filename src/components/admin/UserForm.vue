@@ -1,10 +1,5 @@
 <script setup>
 import stationService from '@/services/stationService';
-import Button from 'primevue/button';
-import Dropdown from 'primevue/dropdown';
-import InputSwitch from 'primevue/inputswitch';
-import InputText from 'primevue/inputtext';
-import Password from 'primevue/password';
 import { computed, onMounted, ref, watch } from 'vue';
 
 const props = defineProps({

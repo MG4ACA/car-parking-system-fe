@@ -1,7 +1,4 @@
 <script setup>
-import Card from 'primevue/card';
-import SelectButton from 'primevue/selectbutton';
-import Tag from 'primevue/tag';
 import { computed } from 'vue';
 
 const props = defineProps({

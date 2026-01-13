@@ -1,13 +1,6 @@
 <script setup>
 import ImageGallery from '@/components/shared/ImageGallery.vue';
 import { formatCurrency, formatDateTime, formatDuration } from '@/utils/formatters';
-import Button from 'primevue/button';
-import Column from 'primevue/column';
-import DataTable from 'primevue/datatable';
-import Dialog from 'primevue/dialog';
-import TabPanel from 'primevue/tabpanel';
-import TabView from 'primevue/tabview';
-import Tag from 'primevue/tag';
 import { computed, ref } from 'vue';
 
 const props = defineProps({

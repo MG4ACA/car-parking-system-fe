@@ -1,7 +1,4 @@
 <script setup>
-import Card from 'primevue/card';
-import Skeleton from 'primevue/skeleton';
-
 const props = defineProps({
   icon: {
     type: String,

@@ -1,9 +1,7 @@
 <script setup>
-import Card from 'primevue/card'
-import Button from 'primevue/button'
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
 
-const router = useRouter()
+const router = useRouter();
 </script>
 
 <template>
@@ -11,7 +9,10 @@ const router = useRouter()
     <Card class="not-found-card">
       <template #content>
         <div class="not-found-content">
-          <i class="pi pi-exclamation-circle" style="font-size: 4rem; color: var(--error-color);"></i>
+          <i
+            class="pi pi-exclamation-circle"
+            style="font-size: 4rem; color: var(--error-color)"
+          ></i>
           <h1>404</h1>
           <h2>Page Not Found</h2>
           <p>The page you are looking for doesn't exist.</p>

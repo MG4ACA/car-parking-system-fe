@@ -1,8 +1,6 @@
 <script setup>
 import { useVehicleTypeStore } from '@/stores/vehicleType.store';
 import { storeToRefs } from 'pinia';
-import Card from 'primevue/card';
-import Skeleton from 'primevue/skeleton';
 import { computed, onMounted } from 'vue';
 
 const props = defineProps({

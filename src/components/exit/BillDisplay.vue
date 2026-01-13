@@ -1,10 +1,6 @@
 <script setup>
 import exitService from '@/services/exitService';
 import { formatDate, formatTime } from '@/utils/formatters';
-import Card from 'primevue/card';
-import Divider from 'primevue/divider';
-import Skeleton from 'primevue/skeleton';
-import Tag from 'primevue/tag';
 import { computed } from 'vue';
 
 const props = defineProps({

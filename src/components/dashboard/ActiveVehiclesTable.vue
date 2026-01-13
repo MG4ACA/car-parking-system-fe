@@ -1,10 +1,5 @@
 <script setup>
 import { formatDateTime, formatDuration } from '@/utils/formatters';
-import Card from 'primevue/card';
-import Column from 'primevue/column';
-import DataTable from 'primevue/datatable';
-import InputText from 'primevue/inputtext';
-import Tag from 'primevue/tag';
 import { computed, ref } from 'vue';
 
 const props = defineProps({

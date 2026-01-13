@@ -1,14 +1,12 @@
 <script setup>
-import { onMounted } from 'vue'
-import { useAuthStore } from '@/stores/auth.store'
-import Toast from 'primevue/toast'
-import ConfirmDialog from 'primevue/confirmdialog'
+import { useAuthStore } from '@/stores/auth.store';
+import { onMounted } from 'vue';
 
-const authStore = useAuthStore()
+const authStore = useAuthStore();
 
 onMounted(() => {
-  authStore.initAuth()
-})
+  authStore.initAuth();
+});
 </script>
 
 <template>

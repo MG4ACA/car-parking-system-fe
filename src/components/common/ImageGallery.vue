@@ -2,11 +2,6 @@
 import imageService from '@/services/imageService';
 import { computed, onMounted, ref } from 'vue';
 
-import Button from 'primevue/button';
-import Galleria from 'primevue/galleria';
-import ProgressSpinner from 'primevue/progressspinner';
-import Tag from 'primevue/tag';
-
 const props = defineProps({
   sessionId: {
     type: Number,

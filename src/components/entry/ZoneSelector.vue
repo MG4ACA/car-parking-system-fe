@@ -2,10 +2,6 @@
 import entryService from '@/services/entryService';
 import { useZoneStore } from '@/stores/zone.store';
 import { storeToRefs } from 'pinia';
-import Card from 'primevue/card';
-import ProgressBar from 'primevue/progressbar';
-import Skeleton from 'primevue/skeleton';
-import Tag from 'primevue/tag';
 import { computed, onMounted, ref, watch } from 'vue';
 
 const props = defineProps({

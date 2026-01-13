@@ -1,6 +1,4 @@
-<script setup>
-import Card from 'primevue/card'
-</script>
+<script setup></script>
 
 <template>
   <div class="page-container">

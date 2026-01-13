@@ -1,6 +1,4 @@
 <script setup>
-import Image from 'primevue/image';
-import ProgressSpinner from 'primevue/progressspinner';
 import { computed } from 'vue';
 
 const props = defineProps({

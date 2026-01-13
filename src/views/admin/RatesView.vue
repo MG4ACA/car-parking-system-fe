@@ -4,15 +4,6 @@ import { storeToRefs } from 'pinia';
 import { useConfirm } from 'primevue/useconfirm';
 import { onMounted, ref } from 'vue';
 
-import Button from 'primevue/button';
-import Column from 'primevue/column';
-import ConfirmDialog from 'primevue/confirmdialog';
-import DataTable from 'primevue/datatable';
-import Dialog from 'primevue/dialog';
-import Drawer from 'primevue/drawer';
-import Tag from 'primevue/tag';
-import Timeline from 'primevue/timeline';
-
 import VehicleTypeForm from '@/components/admin/VehicleTypeForm.vue';
 
 const vehicleTypeStore = useVehicleTypeStore();

@@ -1,9 +1,5 @@
 <script setup>
 import { useAuthStore } from '@/stores/auth.store';
-import Avatar from 'primevue/avatar';
-import Button from 'primevue/button';
-import Menu from 'primevue/menu';
-import Menubar from 'primevue/menubar';
 import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
 

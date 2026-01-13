@@ -4,14 +4,6 @@ import { storeToRefs } from 'pinia';
 import { useConfirm } from 'primevue/useconfirm';
 import { computed, onMounted, ref } from 'vue';
 
-import Button from 'primevue/button';
-import Column from 'primevue/column';
-import ConfirmDialog from 'primevue/confirmdialog';
-import DataTable from 'primevue/datatable';
-import Drawer from 'primevue/drawer';
-import Dropdown from 'primevue/dropdown';
-import Tag from 'primevue/tag';
-
 import StationForm from '@/components/admin/StationForm.vue';
 
 const stationStore = useStationStore();

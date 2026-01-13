@@ -1,7 +1,4 @@
 <script setup>
-import Button from 'primevue/button';
-import Card from 'primevue/card';
-import ProgressBar from 'primevue/progressbar';
 import { ref } from 'vue';
 
 const props = defineProps({

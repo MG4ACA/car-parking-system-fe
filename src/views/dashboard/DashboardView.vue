@@ -8,7 +8,6 @@ import { useAuthStore } from '@/stores/auth.store';
 import { useDashboardStore } from '@/stores/dashboard.store';
 import { formatCurrency } from '@/utils/formatters';
 import { storeToRefs } from 'pinia';
-import Button from 'primevue/button';
 import { computed, onMounted, onUnmounted } from 'vue';
 
 const dashboardStore = useDashboardStore();

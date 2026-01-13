@@ -6,12 +6,6 @@ import { useAuthStore } from '@/stores/auth.store';
 import { useVehicleStore } from '@/stores/vehicle.store';
 import { formatCurrency, formatDateTime, formatDuration } from '@/utils/formatters';
 import { storeToRefs } from 'pinia';
-import Button from 'primevue/button';
-import Card from 'primevue/card';
-import Column from 'primevue/column';
-import DataTable from 'primevue/datatable';
-import Paginator from 'primevue/paginator';
-import Tag from 'primevue/tag';
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 
 const vehicleStore = useVehicleStore();

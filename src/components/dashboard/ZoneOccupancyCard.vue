@@ -1,8 +1,4 @@
 <script setup>
-import Card from 'primevue/card';
-import ProgressBar from 'primevue/progressbar';
-import Skeleton from 'primevue/skeleton';
-
 const props = defineProps({
   zones: {
     type: Array,

@@ -1,7 +1,4 @@
 <script setup>
-import Card from 'primevue/card';
-import Skeleton from 'primevue/skeleton';
-import Tag from 'primevue/tag';
 import { ref } from 'vue';
 
 const props = defineProps({

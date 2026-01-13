@@ -30,7 +30,7 @@ export const useZoneStore = defineStore('zone', () => {
     try {
       const response = await zoneService.getZones(params);
       // Handle both array and object with zones property responses
-      zones.value = Array.isArray(response.data) ? response.data : (response.data?.zones || []);
+      zones.value = Array.isArray(response.data) ? response.data : response.data?.zones || [];
       return response;
     } catch (err) {
       error.value = err.response?.data?.error?.message || 'Failed to fetch zones';
