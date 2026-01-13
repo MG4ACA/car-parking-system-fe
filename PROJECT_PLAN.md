@@ -392,14 +392,14 @@ A comprehensive car parking management system with vehicle recognition, automate
 
 **Frontend**
 
-- [ ] 5.7 Create entry station interface
-- [ ] 5.8 Integrate image capture
-- [ ] 5.9 Display OCR results
-- [ ] 5.10 Create vehicle type selector
-- [ ] 5.11 Create zone selector
-- [ ] 5.12 Show capacity warnings
-- [ ] 5.13 Display entry confirmation
-- [ ] 5.14 Create entry store (Pinia)
+- [x] 5.7 Create entry station interface
+- [x] 5.8 Integrate image capture
+- [x] 5.9 Display OCR results
+- [x] 5.10 Create vehicle type selector
+- [x] 5.11 Create zone selector
+- [x] 5.12 Show capacity warnings
+- [x] 5.13 Display entry confirmation
+- [x] 5.14 Create entry store (Pinia)
 
 ### Phase 6: Exit Station & Billing (Week 4-5)
 
