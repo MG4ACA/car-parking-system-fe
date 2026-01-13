@@ -418,16 +418,16 @@ A comprehensive car parking management system with vehicle recognition, automate
 
 **Frontend**
 
-- [ ] 6.11 Create exit station interface
-- [ ] 6.12 Automatic vehicle identification display
-- [ ] 6.13 Manual search interface
-- [ ] 6.14 Display parking duration
-- [ ] 6.15 Display calculated amount
-- [ ] 6.16 Payment status toggle
-- [ ] 6.17 Show bill preview
-- [ ] 6.18 Gate control button
-- [ ] 6.19 Exit confirmation flow
-- [ ] 6.20 Create exit store (Pinia)
+- [x] 6.11 Create exit station interface
+- [x] 6.12 Automatic vehicle identification display
+- [x] 6.13 Manual search interface
+- [x] 6.14 Display parking duration
+- [x] 6.15 Display calculated amount
+- [x] 6.16 Payment status toggle
+- [x] 6.17 Show bill preview
+- [x] 6.18 Gate control button
+- [x] 6.19 Exit confirmation flow
+- [x] 6.20 Create exit store (Pinia)
 
 ### Phase 7: Dashboard & Real-time Updates (Week 5)
 
