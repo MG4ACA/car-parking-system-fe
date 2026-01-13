@@ -373,11 +373,11 @@ A comprehensive car parking management system with vehicle recognition, automate
 
 **Frontend**
 
-- [ ] 4.9 Create image capture component (mobile/camera)
-- [ ] 4.10 Create image preview component
-- [ ] 4.11 Create image gallery component
-- [ ] 4.12 Handle upload progress and errors
-- [ ] 4.13 Create manual plate entry fallback UI
+- [x] 4.9 Create image capture component (mobile/camera)
+- [x] 4.10 Create image preview component
+- [x] 4.11 Create image gallery component
+- [x] 4.12 Handle upload progress and errors
+- [x] 4.13 Create manual plate entry fallback UI
 
 ### Phase 5: Entry Station (Week 3-4)
 
